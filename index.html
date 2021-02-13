@@ -2,7 +2,7 @@
     const token = new URL(window.location.href).searchParams.get("key")
     
     if (!token) window.close()
-    if(!/^[a-zA-Z0-9]{64}$/.test(token)) window.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    if(!/^[a-zA-Z0-9]{64}$/.test(token)) return window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
     window.location.href = `https://tz.commandtechno.workers.dev?tz=${encodeURIComponent(tz)}&token=${token}`
