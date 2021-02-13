@@ -1,9 +1,9 @@
 <script>
     const token = new URL(window.location.href).searchParams.get("key")
     
-    if (!token) window.close()
-    
-    if (!/^[a-zA-Z0-9]{64}$/.test(token)) {
+    if (!token) {
+        window.close()
+    } else if (!/^[a-zA-Z0-9]{64}$/.test(token)) {
         window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     } else {
         const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
