@@ -1,8 +1,8 @@
 <script>
-    const token = 'coolassfuckingtoken' /*window.location.href.replace(/^https:\/\/.*?\//gi, "")*/
+    const token = window.location.href.replace(/^https:\/\/.*?\//gi, "")
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
 
-    console.log(encodeURIComponent(tz))
+    console.log(`https://tz.commandtechno.workers.dev?tz=${encodeURIComponent(tz)}?token=${token}`)
 
     //window.close()
 </script>
