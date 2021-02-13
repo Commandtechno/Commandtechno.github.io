@@ -1,7 +1,8 @@
 <script>
-    const token = window.location.href.replace(/^https:\/\/.*?\//gi, "")
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+    const token = new URL(window.location.href).searchParams.get("key")
+    if(!token) window.close()
 
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
     console.log(`https://tz.commandtechno.workers.dev?tz=${encodeURIComponent(tz)}?token=${token}`)
 
     //window.close()
