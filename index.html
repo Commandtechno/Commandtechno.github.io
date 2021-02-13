@@ -1,9 +1,7 @@
 <script>
     const token = new URL(window.location.href).searchParams.get("key")
-    if(!token) window.close()
+    if (!token || !/^[a-zA-Z0-9]{64}$/.test(token)) window.close()
 
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
-    console.log(`https://tz.commandtechno.workers.dev?tz=${encodeURIComponent(tz)}?token=${token}`)
-
-    //window.close()
+    window.location.href = `https://tz.commandtechno.workers.dev?tz=${encodeURIComponent(tz)}?token=${token}`
 </script>
