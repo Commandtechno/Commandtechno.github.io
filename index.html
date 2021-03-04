@@ -1,10 +1,15 @@
-<script>
-    const token = new URL(window.location.href).searchParams.get("key")
-    
-    if (!token || !/^[a-zA-Z0-9]{64}$/.test(token)) {
-        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    } else {
-        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
-        window.location.href = `https://tz.commandtechno.workers.dev?tz=${encodeURIComponent(tz)}&token=${token}`
-    }
-</script>
+<head>
+    <link rel="stylesheet" href="index.css">
+    </link>
+</head>
+
+<body>
+    <label class="label" for="minimum">Minimum: </label>
+    <input class="input" name="minimum" id="min" type="number"></input>
+    <label class="label" for="maximum">Maximum: </label>
+    <input class="input" name="maximum" id="max" type="number"></input>
+    <button class="button" id="generate">Generate!</button>
+    <h1 class="output" id="output"></h1>
+</body>
+
+<script src="index.js"></script>
